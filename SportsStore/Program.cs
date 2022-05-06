@@ -8,8 +8,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<StoreDbContext>(
     opts =>
     {
-        opts.UseSqlServer(builder.Configuration["ConnectionStrings:SportsStoreConnection"]);
+        // opts.UseSqlServer(builder.Configuration["ConnectionStrings:SportsStoreConnection"]);
         // opts.UseSqlite();
+        opts.UseSqlite("Data Source=SportsStore.db");
     }
 );
 
