@@ -35,6 +35,26 @@ namespace SportsStore.Infrastructure
                 {
                     TagBuilder tag = new TagBuilder("a");
                     tag.Attributes["href"] = urlHelper.Action(PageAction, new { productPage = i });
+                    tag.AddCssClass("p-2");
+                    tag.AddCssClass("border-2");
+                    tag.AddCssClass("border-black");
+
+                    if (PageModel.CurrentPage == i) 
+                    {
+                        tag.AddCssClass("bg-blue-50");
+                    }
+                    else
+                    {
+                        tag.AddCssClass("bg-blue-800");
+                        tag.AddCssClass("text-white");
+                    }
+
+                    // Round the outsides of the box containing the links.
+                    if (i == 1) 
+                        tag.AddCssClass("rounded-l");
+                    else if (i == PageModel.TotalPages)
+                        tag.AddCssClass("rounded-r");
+
                     tag.InnerHtml.Append(i.ToString());
                     result.InnerHtml.AppendHtml(tag);
                 }

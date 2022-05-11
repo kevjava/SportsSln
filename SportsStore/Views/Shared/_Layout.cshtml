@@ -3,10 +3,21 @@
     <head>
         <meta name="viewport" content="width=device-width" />
         <title>SportsStore</title>
+        <link href="/lib/tailwindcss/tailwind.min.css" rel="stylesheet" />
     </head>
     <body>
-        <div>
-            @RenderBody()
+        <div class="container mx-auto">
+            <div class="bg-black text-white p-2">
+                <h1 class="ml-2 text-4xl">SPORTS STORE</h1>
+            </div>
+            <div class="flex ">
+                <div class="flex w-1/4">
+                    <p>I'll add something useful here later.</p>
+                </div>
+                <div class="flex w-3/4">
+                    @RenderBody()
+                </div>
+            </div>
         </div>
     </body>
 </html>
