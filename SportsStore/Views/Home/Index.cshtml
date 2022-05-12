@@ -8,7 +8,9 @@
     </div>
 
     <div class="p-4">
-        <div page-model="@Model?.PagingInfo" page-action="Index"></div>
+        <div page-model="@Model?.PagingInfo" page-action="Index" 
+            page-url-category="@Model?.CurrentCategory!" page-class-selected="bg-blue-50">
+        </div>
     </div>
 
 </div>
