@@ -19,8 +19,6 @@ namespace SportsStore.Controllers
                         .Skip((productPage - 1) * PageSize)
                         .Take(PageSize);
 
-            Console.Out.WriteLine($"Products size: {products.Count()}");
-
             var pagingInfo = new PagingInfo
             {
                 CurrentPage = productPage,

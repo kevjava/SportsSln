@@ -4,14 +4,17 @@
         
     <ul class="flex flex-col items-center">
         <li class="m-1 w-full">
-            <a class="border-2 border-black rounded-lg p-1 w-full block text-center bg-gray-100" asp-action="Index" asp-controller="Home" asp-route-category="">
+            <a class="border-2 border-black rounded-lg p-1 w-full block text-center bg-gray-100" 
+                asp-action="Index" 
+                asp-controller="Home" 
+                asp-route-category="">
                 Home
             </a>
         </li>
         @foreach (string category in Model ?? Enumerable.Empty<string>()) 
         {
             <li class="m-1 w-full min-w-full">
-                <a class="border-2 border-black rounded-lg p-1 w-full block text-center bg-gray-100" 
+                <a class="border-2 border-black rounded-lg p-1 w-full block text-center @(category==ViewBag.SelectedCategory? "bg-blue-800 text-white" : "bg-gray-100")" 
                     asp-action="Index" 
                     asp-controller="Home" 
                     asp-route-category="@category"
