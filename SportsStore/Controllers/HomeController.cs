@@ -19,11 +19,13 @@ namespace SportsStore.Controllers
                         .Skip((productPage - 1) * PageSize)
                         .Take(PageSize);
 
+            Console.Out.WriteLine($"Products size: {products.Count()}");
+
             var pagingInfo = new PagingInfo
             {
                 CurrentPage = productPage,
                 ItemsPerPage = PageSize,
-                TotalItems = _repository.Products.Count()
+                TotalItems = _repository.Products.Where(p => category == null || p.Category == category).Count()
             };
 
             var model = new ProductsListViewModel

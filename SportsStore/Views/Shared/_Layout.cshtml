@@ -6,17 +6,25 @@
         <link href="/lib/tailwindcss/tailwind.min.css" rel="stylesheet" />
     </head>
     <body>
-        <div class="container mx-auto">
+        <div class="container mx-auto border-2 border-black bg-gray-200 h-full">
             <div class="bg-black text-white p-2">
                 <h1 class="ml-2 text-4xl">SPORTS STORE</h1>
             </div>
-            <div class="flex ">
-                <div class="flex w-1/4">
-                    <p>I'll add something useful here later.</p>
+            <div class="flex">
+                <div class="flex w-auto">
+                    <vc:navigation-menu />
                 </div>
-                <div class="flex w-3/4">
+                <div class="flex grow">
                     @RenderBody()
                 </div>
+            </div>
+            <div class="bg-black text-white p-2">
+                <p class="text-xs text-center">&copy; 2022 SportsStore Inc. 
+                    All rights reserved. 
+                    No purchase necessary to participate.
+                    Void where prohibited. 
+                    Add more legalese text here in the future. 
+                </p>
             </div>
         </div>
     </body>

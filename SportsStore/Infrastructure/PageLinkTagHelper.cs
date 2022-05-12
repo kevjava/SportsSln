@@ -34,6 +34,11 @@ namespace SportsStore.Infrastructure
             {
                 IUrlHelper urlHelper = _urlHelperFactory.GetUrlHelper(ViewContext);
                 TagBuilder result = new TagBuilder("div");
+                
+                if (PageModel.TotalPages == 1) {
+                    return;
+                }
+
                 for (int i = 1; i <= PageModel.TotalPages; i++)
                 {
                     TagBuilder tag = new TagBuilder("a");

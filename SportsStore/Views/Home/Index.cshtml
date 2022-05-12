@@ -1,6 +1,13 @@
 ﻿@model ProductsListViewModel
 
 <div class="flex flex-col">
+    @if(Model?.CurrentCategory != null)
+    { 
+        <h3 class="text-xl p-3">Category: <b>@Model?.CurrentCategory</b></h3>
+    } else {
+        <h3 class="text-xl p-3">All Products</h3>
+    }
+
     <div class="grid gap-4 grid-cols-3 m-3">
         @foreach (var product in Model?.Products ?? Enumerable.Empty<Product>()) {
             <partial name="ProductSummary" model="product" />
