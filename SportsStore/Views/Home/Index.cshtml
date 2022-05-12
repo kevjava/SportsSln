@@ -8,7 +8,7 @@
         <h3 class="text-xl p-3">All Products</h3>
     }
 
-    <div class="grid gap-4 grid-cols-3 m-3">
+    <div class="grid gap-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 m-3">
         @foreach (var product in Model?.Products ?? Enumerable.Empty<Product>()) {
             <partial name="ProductSummary" model="product" />
         }
