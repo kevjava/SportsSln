@@ -21,7 +21,7 @@ namespace SportsStore.Models {
             Lines.RemoveAll(l => l.Product.ProductId == product.ProductId);
 
         public decimal ComputeTotalValue() => 
-            Lines.Sum(e => e.Product.Price * e.Quantity);
+            Lines.Sum(e => e.Subtotal);
 
         public void Clear() => Lines.Clear();
     }    
@@ -30,5 +30,6 @@ namespace SportsStore.Models {
         public int CartLineId { get; set; }
         public Product Product {get; set; } = new();
         public int Quantity { get; set; } 
+        public decimal Subtotal => Quantity * Product.Price;
     }
 }
